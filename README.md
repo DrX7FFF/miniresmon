@@ -18,20 +18,20 @@ Via TCP socket
 ## Installation
 Installation only shell script :
 ```
-./install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.sh)"
 ```
 
 Installation shell script + service (port par défaut 8889) :
 ```
-./install.sh --service
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.sh)" --service
 ```
 
 Installation shell script + service + port :
 ```
-./install.sh --service 9999
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.sh)" --service 9999
 ```
 
 Uninstall :
 ```
-./install.sh --uninstall
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.sh)" --uninstall
 ```
