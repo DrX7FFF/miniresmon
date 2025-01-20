@@ -3,7 +3,7 @@
 SHELL_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
 REPO_URL="https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/$SHELL_NAME"
-LOCAL_SCRIPT_PATH="/storage/userdata/$SHELL_NAME"
+LOCAL_SCRIPT_PATH="/storage/.kodi/userdata/$SHELL_NAME"
 SERVICE_FILE="/storage/.config/system.d/"$SERVICE_NAME
 
 install_script() {
