@@ -59,6 +59,7 @@ uninstall() {
 }
 
 main() {
+    echo "Version 2"
     case "$1" in
         --uninstall)
             uninstall
