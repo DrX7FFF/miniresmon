@@ -35,3 +35,24 @@ Uninstall :
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.sh)" --uninstall
 ```
+
+## Installation Coreelec
+Installation only shell script :
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/installcoreelec.sh)"
+```
+
+Installation shell script + service (port par défaut 8889) :
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/installcoreelec.sh)" --service
+```
+
+Installation shell script + service + port :
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/installcoreelec.sh)" --service 9999
+```
+
+Uninstall :
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/installcoreelec.sh)" --uninstall
+```
