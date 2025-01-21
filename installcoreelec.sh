@@ -1,16 +1,16 @@
 #!/bin/bash
 
-SHELL_NAME="miniresmon.sh"
+SCRIPT_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
-REPO_URL="https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/$SHELL_NAME"
-LOCAL_SCRIPT_PATH="/storage/.kodi/userdata/$SHELL_NAME"
+SCRIPT_FILE="/storage/.kodi/userdata/$SCRIPT_NAME"
 SERVICE_FILE="/storage/.config/system.d/"$SERVICE_NAME
+REPO_URL="https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/$SCRIPT_NAME"
 
 install_script() {
     echo "Téléchargement et installation du script..."
-    curl -o "$LOCAL_SCRIPT_PATH" "$REPO_URL"
-    chmod +x "$LOCAL_SCRIPT_PATH"
-    echo "Script installé dans $LOCAL_SCRIPT_PATH"
+    curl -o "$SCRIPT_FILE" "$REPO_URL"
+    chmod +x "$SCRIPT_FILE"
+    echo "Script installé dans $SCRIPT_FILE"
 }
 
 create_service() {
@@ -23,7 +23,7 @@ Description=Disk Usage Script Service
 After=network.target
 
 [Service]
-ExecStart=$LOCAL_SCRIPT_PATH -s $1
+ExecStart=$SCRIPT_FILE -s $1
 Restart=always
 User=$(whoami)
 
@@ -46,12 +46,7 @@ uninstall() {
     systemctl daemon-reload
     echo "Service $SERVICE_NAME supprimé"
 
-    if [ -f "$LOCAL_SCRIPT_PATH" ]; then
-        rm -f "$LOCAL_SCRIPT_PATH"
-        echo "Script supprimé de $LOCAL_SCRIPT_PATH"
-    else
-        echo "Script non trouvé à $LOCAL_SCRIPT_PATH"
-    fi
+    rm -f "$SCRIPT_FILE"
 }
 
 main() {
