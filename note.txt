@@ -1,0 +1,14 @@
+Résultat de l'installation de miniresmon sur CoreElec :
+
+MediaCenter:~ # sh -c "$(curl -fsSL https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/installcoreelec.sh) --service"
+Version 4
+Mode : --service
+Téléchargement et installation du script...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2340  100  2340    0     0  28837      0 --:--:-- --:--:-- --:--:-- 29250
+Script installé dans /storage/.kodi/userdata/miniresmon.sh
+Création du service systemd pour le script avec le port 8889...
+Service créé. Activation et démarrage du service...
+Created symlink /storage/.config/system.d/multi-user.target.wants/miniresmon.service → /storage/.config/system.d/miniresmon.service.
+Service miniresmon.service actif sur le port 8889
