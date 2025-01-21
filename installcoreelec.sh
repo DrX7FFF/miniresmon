@@ -1,10 +1,10 @@
 #!/bin/bash
-VERSION="6"
+VERSION="7"
 SCRIPT_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
 SCRIPT_PATH="/storage/.config/miniresmon"
-SCRIPT_FILE="SCRIPT_PATH/$SCRIPT_NAME"
-SERVICE_FILE="/storage/.config/system.d/"$SERVICE_NAME
+SCRIPT_FILE="$SCRIPT_PATH/$SCRIPT_NAME"
+SERVICE_FILE="/storage/.config/system.d/$SERVICE_NAME"
 REPO_URL="https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/$SCRIPT_NAME"
 
 install_script() {
