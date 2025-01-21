@@ -1,5 +1,5 @@
 #!/bin/bash
-
+VERSION="5"
 SCRIPT_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
 SCRIPT_FILE="/storage/.kodi/userdata/$SCRIPT_NAME"
@@ -50,7 +50,7 @@ uninstall() {
 }
 
 main() {
-    echo "Version 4"
+    echo "Version $VERSION"
     echo "Mode : $1"
     case "$1" in
         --uninstall)
