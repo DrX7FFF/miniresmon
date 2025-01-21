@@ -39,5 +39,5 @@ sh -c "$(curl https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/install.
 ## Copie dans le dossier courant
 Installation only shell script :
 ```
-curl -o https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/miniresmon.sh miniresmon.sh && chmod +x miniresmon.sh
+curl -o "miniresmon.sh" "https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/miniresmon.sh" && chmod +x miniresmon.sh
 ```
