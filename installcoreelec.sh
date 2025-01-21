@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="5"
+VERSION="6"
 SCRIPT_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
 SCRIPT_FILE="/storage/.kodi/userdata/$SCRIPT_NAME"
