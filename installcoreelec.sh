@@ -2,12 +2,14 @@
 VERSION="6"
 SCRIPT_NAME="miniresmon.sh"
 SERVICE_NAME="miniresmon.service"
-SCRIPT_FILE="/storage/.kodi/userdata/$SCRIPT_NAME"
+SCRIPT_PATH="/storage/.config/miniresmon"
+SCRIPT_FILE="SCRIPT_PATH/$SCRIPT_NAME"
 SERVICE_FILE="/storage/.config/system.d/"$SERVICE_NAME
 REPO_URL="https://raw.githubusercontent.com/DrX7FFF/miniresmon/main/$SCRIPT_NAME"
 
 install_script() {
     echo "Téléchargement et installation du script..."
+    mkdir -p "$SCRIPT_PATH"
     curl -o "$SCRIPT_FILE" "$REPO_URL"
     chmod +x "$SCRIPT_FILE"
     echo "Script installé dans $SCRIPT_FILE"
@@ -47,6 +49,7 @@ uninstall() {
     echo "Service $SERVICE_NAME supprimé"
 
     rm -f "$SCRIPT_FILE"
+    rmdir "$SCRIPT_PATH"
 }
 
 main() {
