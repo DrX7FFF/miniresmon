@@ -40,21 +40,17 @@ EOF
 
 uninstall() {
     echo "Suppression du script et du service..."
+    systemctl stop "$SERVICE_NAME"
+    systemctl disable "$SERVICE_NAME"
+    rm -f SERVICE_FILE
+    systemctl daemon-reload
+    echo "Service $SERVICE_NAME supprimé"
+
     if [ -f "$LOCAL_SCRIPT_PATH" ]; then
         rm -f "$LOCAL_SCRIPT_PATH"
         echo "Script supprimé de $LOCAL_SCRIPT_PATH"
     else
         echo "Script non trouvé à $LOCAL_SCRIPT_PATH"
-    fi
-
-    if [ -f "/etc/systemd/system/$SERVICE_NAME" ]; then
-        systemctl stop "$SERVICE_NAME"
-        systemctl disable "$SERVICE_NAME"
-        rm -f "/etc/systemd/system/$SERVICE_NAME"
-        systemctl daemon-reload
-        echo "Service $SERVICE_NAME supprimé"
-    else
-        echo "Service $SERVICE_NAME non trouvé"
     fi
 }
 
